@@ -3,8 +3,8 @@
  *
  * Author: Kevin Buffardi
  * Updated: Nov 8, 2016
- * Description: Interface for an abstract scoreboard for keeping score for any 
- *              kind of competition with TWO or more competitors and AT LEAST 
+ * Description: Interface for an abstract scoreboard for keeping score for any
+ *              kind of competition with TWO or more competitors and AT LEAST
  *              ONE period.
  *
  *              For a simple scoreboard, there may only be one period.
@@ -14,7 +14,7 @@
  *
  *              Competitors and periods are numbered in increasing order from 1
  *              so a scoreboard for a 9-inning baseball game will have
- *              competitors 1 and 2 with innings {1...9}, inclusive. 
+ *              competitors 1 and 2 with innings {1...9}, inclusive.
  *
  *              Periods should initially have 0 score for all competitors.
  *
@@ -33,7 +33,7 @@ class IScoreboard
   	 *  values should result in no changes in the scoreboard.
   	 */
 	virtual void setScore(int competitor, int period, int score)=0;
-	
+
 	/*
   	 * void getScore(int,int)
   	 *  Returns the score for one competitor for a given period. Out of range
