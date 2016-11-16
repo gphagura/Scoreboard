@@ -4,6 +4,8 @@
 
 #include <gtest/gtest.h>
 #include "Scoreboard.h"
+
+#define INT_MIN -2147483648
  
 class ScoreboardTest : public ::testing::Test
 {
@@ -46,6 +48,14 @@ TEST(ScoreboardTest, setScoreUnderBoundCompetitors)
 	ASSERT_EQ(0, board.getScore(1,1) );
 	ASSERT_EQ(INT_MIN, board.getScore(0,1) );
 }
+
+TEST(ScoreboardTest, setScoreUpperBoundPeriodcpy)
+{
+	Scoreboard board(3,10);
+	board.setScore(1,9,5);
+	ASSERT_EQ(5, board.getScore(1,9) );
+}
+
 TEST(ScoreboardTest, setScoreUpperBoundPeriods)
 {
 	Scoreboard board(3,10);
