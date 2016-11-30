@@ -1,4 +1,5 @@
 #include "Scoreboard.h"
+#include "ObserverPattern.hpp"
 #include <iostream>
 using namespace std;
 
@@ -35,6 +36,7 @@ void Scoreboard::setScore(int competitor, int period, int score)
   if(InBound(competitor, period))
   {
     m_scores[competitor-1][period-1] = score;
+    update();
   }
   else
   {
@@ -81,6 +83,7 @@ void Scoreboard::clearScoreboard()
     for(int y=0; y<m_num_periods; y++)
     {
       m_scores[i][y] =0;
+      update();
     }
   }
 }

@@ -1,6 +1,7 @@
 #include "IScoreboard.h"
+#include "ObserverPattern.hpp"
 
-class Scoreboard: public IScoreboard
+class Scoreboard: public IScoreboard, public Observable
 {
 public:
   Scoreboard(int num_competitors, int num_periods);
