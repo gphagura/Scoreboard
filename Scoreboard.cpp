@@ -7,6 +7,7 @@ using namespace std;
 
 Scoreboard::Scoreboard(int num_competitors, int num_periods)
 {
+  cout<<"create "<<num_competitors<<" by "<<num_periods<<endl;
   m_num_competitors= num_competitors;
   m_num_periods = num_periods;
   m_scores= new int*[num_competitors];
@@ -24,7 +25,7 @@ Scoreboard::Scoreboard(int num_competitors, int num_periods)
 }
 Scoreboard::~Scoreboard()
 {
-  for(int i = 0; i < m_num_periods; ++i)
+  for(int i = 0; i < m_num_competitors; ++i)
   {
     delete *(m_scores+i);
   }
@@ -37,6 +38,7 @@ void Scoreboard::setScore(int competitor, int period, int score)
   {
     m_scores[competitor-1][period-1] = score;
     notifyObservers();
+    //cout << "competitor(colum)" << competitor << "period(row)" << period << "score(value)" << m_scores[competitor-1][period-1] << endl;
   }
   else
   {

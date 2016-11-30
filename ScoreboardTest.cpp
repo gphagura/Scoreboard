@@ -56,7 +56,7 @@ TEST(ScoreboardTest, setScoreUpperBoundPeriodcpy)
 	ASSERT_EQ(5, board.getScore(1,9) );
 }
 
-TEST(ScoreboardTest, setScoreUpperBoundPeriods)
+TEST(ScoreboardTest, setScoreUpperBoundPeri)
 {
 	Scoreboard board(3,10);
 	board.setScore(1,10,100000);
